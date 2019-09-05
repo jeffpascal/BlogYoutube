@@ -29,10 +29,6 @@ public class BlogController {
 		return "blog";
 	}
 	
-	@RequestMapping(value="/profesor")
-	public String[] serveOrarProfesor() {
-		return SiteSimpluApplication.prof.getOrarMaster();
-		
-	}
+
 	
 }

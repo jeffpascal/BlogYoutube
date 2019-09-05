@@ -9,21 +9,17 @@ import java.util.stream.IntStream;
 public class Profesor {
 	
 	private ArrayList<Student> listaStudenti;
-	@Override
-	public String toString() {
-		return "Profesor [listaStudenti=" + listaStudenti + ", orarMaster=" + Arrays.toString(orarMaster) + ", nume="
-				+ nume + "]";
-	}
+
 	public ArrayList<Student> getListaStudenti() {
 		return listaStudenti;
 	}
 	public void setListaStudenti(ArrayList<Student> listaStudenti) {
 		this.listaStudenti = listaStudenti;
 	}
-	public String[] getOrarMaster() {
+	public ArrayList<String> getOrarMaster() {
 		return orarMaster;
 	}
-	public void setOrarMaster(String[] orarMaster) {
+	public void setOrarMaster(ArrayList<String> orarMaster) {
 		this.orarMaster = orarMaster;
 	}
 	public String getNume() {
@@ -40,8 +36,8 @@ public class Profesor {
 		this.listaStudenti = listaStudenti;
 		this.nume = nume;
 		List<String> list= generateMaster();
-
-		IntStream.range(0, list.size()).mapToObj(index -> String.format("%d -> %s", index, list.get(index))).forEach(System.out::println);
+		orarMaster = new ArrayList<String>(list);
+		
 	}
 
 
@@ -53,7 +49,7 @@ public class Profesor {
 	}
 
 
-	private String[] orarMaster;
+	private ArrayList<String> orarMaster;
 	private String nume;
 	
 }
